@@ -21,6 +21,17 @@
   </style>
 </head>
 <body>
-  <iframe src="https://script.google.com/macros/s/AKfycbzloUwO09PvkC3-4Ln2bMLQC5FufQLcq-qFxX5BVRvUbLbS2gltGu3FqmcTYgsmbU2sQg/exec"></iframe>
+  <iframe id="app-frame" src=""></iframe>
+
+  <script>
+    // 📍 ใส่ URL เว็บแอป Apps Script ของคุณตรงนี้
+    const gasUrl = "https://script.google.com/macros/s/AKfycby8FQu8lZZ4RiSBiZHtj1FIbX1AoAcv98IUlcMO6mhMjUfFBc9C7Zp8ZzdPqSD0pht0tQ/exec";
+    
+    // ดึงค่า ?page=admin (ถ้ามี) จาก URL ของ GitHub
+    const searchParams = window.location.search;
+    
+    // กำหนด URL ให้ iframe อัตโนมัติ
+    document.getElementById('app-frame').src = gasUrl + searchParams;
+  </script>
 </body>
 </html>
