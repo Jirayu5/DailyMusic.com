@@ -1,1 +1,34 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Music</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      background-color: #0b0d17;
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <iframe id="app-frame" src=""></iframe>
 
+  <script>
+    // URL ของ Google Apps Script เว็บแอปของคุณ
+    const gasUrl = "https://script.google.com/macros/s/AKfycbzjSflcbenRGEG_D6gqFoWHO9K9svaeIYbkK6hs1vubxRljJH5rA1b7X9Va4cYZis5WzA/exec";
+    
+    // ส่งค่า ?page=admin หรือ Parameter อื่นๆ ต่อไปยัง iframe อัตโนมัติ
+    document.getElementById('app-frame').src = gasUrl + window.location.search;
+  </script>
+</body>
+</html>
